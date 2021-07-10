@@ -710,8 +710,6 @@ goto main
 if "!%~1!"=="" goto end
 set temp1=!%~1!
 set temp1=!temp1:"=!
-set temp1=!temp1:(=!
-set temp1=!temp1:)=!
 set temp1=!temp1:%%=!
 set temp1=!temp1:^>=!
 set temp1=!temp1:^<=!
