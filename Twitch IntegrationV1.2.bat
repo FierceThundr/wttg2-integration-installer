@@ -518,7 +518,7 @@ CLS
 call :strip ans
 if "%ans%"=="cancel" (goto installquit )
 if not "%ans:~-9%"=="WTTG2.exe" (echo.&echo.&echo   Please enter a valid response...&echo.&echo.&timeout 2 /nobreak 1>NUL&goto step2 )
-if not exist "%data2:~0,-9%WTTG2_Data\Managed\Assembly-CSharp.dll" (echo.&echo.&echo   Please enter a valid response...&echo.&echo.&timeout 2 /nobreak 1>NUL&goto step2 )
+if not exist "%ans:~0,-9%WTTG2_Data\Managed\Assembly-CSharp.dll" (echo.&echo.&echo   Please enter a valid response...&echo.&echo.&timeout 2 /nobreak 1>NUL&goto step2 )
 set data2=%ans%
 
 Title [WTTG2 Integration] Step 3/5
