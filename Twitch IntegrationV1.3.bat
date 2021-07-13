@@ -7,7 +7,7 @@ mode con: cols=54 lines=30
 ::Programmed by FierceThundr_#3063
 ::Feel free to share!
 
-::V1.1
+::V1.3
 
      -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
@@ -189,26 +189,26 @@ call :end
 CLS
 echo.
 echo.
-echo     To update the mod please retrieve the proper 
-echo   file from the discord server below. After you have 
-echo   accepted the invite download the latest copy of 
-echo   the file "Assembly-CSharp.dll" in the channel 
-echo   named #integration-stable under WTTG2 Twitch 
-echo   Integration. Once you have done this drag the mod 
-echo   file onto this program and press enter.
+echo     To update the mod please retrieve the mod from
+echo   the discord server below, drag it onto this 
+echo   program, and press enter. 
+echo. 
+echo     After you have accepted the invite you can 
+echo   download the latest copy of the file 
+echo   "Assembly-CSharp.dll" in the channel named 
+echo   #integration-stable. Once you have done this drag 
+echo   the mod file onto this program and press enter.
+echo.
+echo     There is also a beta branch channel which you 
+echo   may also be able to download from named
+echo   #integration-beta. Though these releases can be
+echo   potentially buggy and unstable.
 echo.
 echo            https://discord.gg/fcufAUXcnm
 echo.
 echo     You can type "open" and press enter to open the
-echo   discord invite automatically!
-echo.
-echo   You can also type "cancel" to exit this menu.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
+echo   discord invite automatically! You can also type
+echo   "cancel" to close exit this menu.
 echo.
 echo.
 set /p ans=[-]:
@@ -216,7 +216,7 @@ CLS
 call :strip ans
 if "%ans%"=="cancel" (goto main )
 if "%ans%"=="open" (start "" "https://discord.gg/fcufAUXcnm"&goto modupdate )
-if not "%ans:~-19%"=="Assembly-CSharp.dll" (echo.&echo.&echo   Please enter a valid response...&echo.&echo.&timeout 2 /nobreak 1>NUL&goto modupdate )
+if not "%ans:~-19%"=="Assembly-CSharp.dll" (echo.&echo.&echo   Please enter a valid response...&echo.&echo   Please be aware the file must be named&echo   "Assembly-CSharp.dll" to be accepted.&echo.&echo.&timeout 2 /nobreak 1>NUL&goto modupdate )
 copy /y "%ans%" "%data2:~0,-9%Twitch\Backups\Modded_Assembly-CSharp.dll" 1>NUL
 copy /y "%data2:~0,-9%Twitch\Backups\Modded_Assembly-CSharp.dll" "%data2:~0,-9%WTTG2_Data\Managed\Assembly-CSharp.dll" 1>NUL
 >>"%~f0"  (echo set enabled=1)
@@ -457,26 +457,26 @@ CLS
 echo.
 echo.
 echo     To begin installing please retrieve the mod from
-echo   the discord server below. After you have accepted
-echo   the invite download the latest copy of the file 
+echo   the discord server below, drag it onto this 
+echo   program, and press enter. 
+echo.
+echo     To find the mod file, accept the invite below.
+echo   After you have accepted the invite you can
+echo   download the latest copy of the file 
 echo   "Assembly-CSharp.dll" in the channel named 
 echo   #integration-stable. Once you have done this drag 
 echo   the mod file onto this program and press enter.
+echo.
+echo     There is also a beta branch channel which you 
+echo   may also be able to download from named
+echo   #integration-beta. Though these releases can be
+echo   potentially buggy and unstable.
 echo.
 echo            https://discord.gg/fcufAUXcnm
 echo.
 echo     You can type "open" and press enter to open the
 echo   discord invite automatically! You can also type
 echo   "cancel" to cancel the installation at any time.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
-echo.
 echo.
 set /p ans=[-]:
 CLS
@@ -491,16 +491,16 @@ Title [WTTG2 Integration] Install Step 2/5
 CLS
 echo.
 echo.
-echo     To continue installing, please open your wttg2 
-echo   files by finding wttg2 in your steam games list, 
+echo     To continue installing, please find the wttg2
+echo   executable, drag it onto this program, and press
+echo   enter.
+open.
+echo     To locate the executable file, you can find it 
+echo   by going to wttg2 in your steam games list, 
 echo   opening the properties, looking under "Manage", 
 echo   then "Browse Local Files". After this is done find 
 echo   "WTTG2.exe" or "WTTG2", drag it onto this program, 
 echo   and press enter. 
-echo.
-echo.
-echo.
-echo.
 echo.
 echo.
 echo.
