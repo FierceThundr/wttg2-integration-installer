@@ -7,7 +7,7 @@ mode con: cols=54 lines=30
 ::Programmed by FierceThundr_#3063
 ::Feel free to share!
 
-::V1.3
+::V1.4
 
      -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
@@ -219,7 +219,7 @@ if "%ans%"=="open" (start "" "https://discord.gg/fcufAUXcnm"&goto modupdate )
 if not "%ans:~-19%"=="Assembly-CSharp.dll" (echo.&echo.&echo   Please enter a valid response...&echo.&echo   Please be aware the file must be named&echo   "Assembly-CSharp.dll" to be accepted.&echo.&echo.&timeout 2 /nobreak 1>NUL&goto modupdate )
 copy /y "%ans%" "%data2:~0,-9%Twitch\Backups\Modded_Assembly-CSharp.dll" 1>NUL
 copy /y "%data2:~0,-9%Twitch\Backups\Modded_Assembly-CSharp.dll" "%data2:~0,-9%WTTG2_Data\Managed\Assembly-CSharp.dll" 1>NUL
->>"%~f0"  (echo set enabled=1)
+>>"%~f0" (echo set enabled=1)
 CLS
 echo.
 echo.
@@ -304,7 +304,7 @@ call :strip ans
 if "%ans%"=="cancel" (goto updateinfo )
 del "%data2:~0,-9%Twitch\username.txt"
 <NUL set /p=!ans!>>"%data2:~0,-9%Twitch\username.txt"
->>"%~f0"  (echo set data3=%ans%)
+>>"%~f0" (echo set data3=%ans%)
 CLS
 echo.
 echo.
@@ -349,7 +349,7 @@ if "%ans%"=="open" (start "" "https://twitchapps.com/tmi/"&goto update2 )
 if not "%ans:~0,6%"=="oauth:" (echo.&echo.&echo   Please enter a valid response...&echo.&echo.&timeout 2 /nobreak 1>NUL&goto update2 )
 del "%data2:~0,-9%Twitch\oauth.txt"
 <NUL set /p=!ans!>>"%data2:~0,-9%Twitch\oauth.txt"
->>"%~f0"  (echo set data4=%ans%)
+>>"%~f0" (echo set data4=%ans%)
 CLS
 echo.
 echo.
@@ -373,11 +373,11 @@ echo.
 if "%enabled%"=="0" (
   echo     Enabling Integration...
   copy /y "%data2:~0,-9%Twitch\Backups\Modded_Assembly-CSharp.dll" "%data2:~0,-9%WTTG2_Data\Managed\Assembly-CSharp.dll" 1>NUL
-  >>"%~f0"  (echo set enabled=1)
+  >>"%~f0" (echo set enabled=1)
 ) else (
   echo     Disabling Integration...
   copy /y "%data2:~0,-9%Twitch\Backups\Original_Assembly-CSharp.dll" "%data2:~0,-9%WTTG2_Data\Managed\Assembly-CSharp.dll" 1>NUL
-  >>"%~f0"  (echo set enabled=0)
+  >>"%~f0" (echo set enabled=0)
 )
 echo.
 echo.
@@ -494,7 +494,7 @@ echo.
 echo     To continue installing, please find the wttg2
 echo   executable, drag it onto this program, and press
 echo   enter.
-open.
+echo.
 echo     To locate the executable file, you can find it 
 echo   by going to wttg2 in your steam games list, 
 echo   opening the properties, looking under "Manage", 
@@ -639,14 +639,14 @@ md "%data2:~0,-9%Twitch\Backups"
 copy /y "%data1%" "%data2:~0,-9%Twitch\Backups\Modded_Assembly-CSharp.dll" 1>NUL
 copy /y "%data2:~0,-9%WTTG2_Data\Managed\Assembly-CSharp.dll" "%data2:~0,-9%Twitch\Backups\Original_Assembly-CSharp.dll" 1>NUL
 copy /y "%data2:~0,-9%Twitch\Backups\Modded_Assembly-CSharp.dll" "%data2:~0,-9%WTTG2_Data\Managed\Assembly-CSharp.dll" 1>NUL
->>"%~f0"  (
+>>"%~f0" (
   echo ::Installation completed on %date% %time%
   echo set data1=%data1%
   echo set data2=%data2%
   echo set data3=%data3%
   echo set data4=%data4%
   echo ::==========
-  echo set enabled=1)
+  echo set enabled=1 )
 
 Title [WTTG2 Integration] Installation Complete^^!
 :installdone
