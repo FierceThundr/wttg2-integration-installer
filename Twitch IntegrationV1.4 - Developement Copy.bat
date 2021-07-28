@@ -1,7 +1,19 @@
-@echo off
+::@echo off
 @setlocal EnableDelayedExpansion
 color 0A
 mode con: cols=54 lines=30
+
+::for /f "tokens=*" %%a in ('cd') do (set test=%%a)
+::echo %test%
+F:&dir "\*WTTG2.exe" /s /b
+C:&dir "\*WTTG2.exe" /s /b
+E:&dir "\*WTTG2.exe" /s /b
+::where /r "F:" /f "*steamapps\common\Welcome to the Game II\WTTG2.exe"
+::where /r "F:" /f "*steamapps/common/Welcome to the Game II/WTTG2.exe"
+::where /r "F:" /f "WTTG2.exe"
+::where /r "E:" /f "WTTG2.exe"
+::where /r "C:" /f "WTTG2.exe"
+pause
 
 ::Welcome to the Game Twitch Integration Installer
 ::Programmed by FierceThundr_#3063
@@ -9,7 +21,7 @@ mode con: cols=54 lines=30
 
 ::V1.4
 
-::   -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+     -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 :main
 Title [WTTG2 Integration] Main Menu
@@ -50,7 +62,6 @@ if "%ans%"=="3" (goto toggleintegration )
 if "%ans%"=="4" (goto troubleshoot )
 if "%ans%"=="5" (goto updateinformation )
 if "%ans%"=="6" (goto clearcache )
-::if "%ans%"=="d" (goto debug )
 echo.&echo.&echo   Please enter a valid response...&echo.&echo.&timeout 2 /nobreak 1>NUL&goto main
 
 
@@ -451,7 +462,7 @@ if defined data2 (if exist "%data2:~0,-9%Twitch" (
   call :strip ans
   if "%ans%"=="cancel" (goto installquit )
   if not "%ans%"=="continue" (echo.&echo.&echo   Please enter a valid response...&echo.&echo.&timeout 2 /nobreak 1>NUL&goto installmulti )
-))
+  ))
 Title [WTTG2 Integration] Install Step 1/5
 :step1
 CLS
@@ -647,7 +658,7 @@ copy /y "%data2:~0,-9%Twitch\Backups\Modded_Assembly-CSharp.dll" "%data2:~0,-9%W
   echo set data3=%data3%
   echo set data4=%data4%
   echo ::==========
-  echo set enabled=1)
+  echo set enabled=1 )
 
 Title [WTTG2 Integration] Installation Complete^^!
 :installdone
@@ -720,4 +731,3 @@ set temp1=%temp1:!=%
 set %~1=%temp1%
 set temp1=&set temp2=
 :end
-
