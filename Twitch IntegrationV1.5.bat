@@ -7,9 +7,9 @@ mode con: cols=54 lines=30
 ::Programmed by FierceThundr_#3063
 ::Feel free to share!
 
-::V1.4
+::V1.5
 
-::   -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+::   -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=c
 
 :main
 Title [WTTG2 Integration] Main Menu
@@ -202,8 +202,8 @@ echo   the mod file onto this program and press enter.
 echo.
 echo     There is also a beta branch channel which you 
 echo   may also be able to download from named
-echo   #integration-beta. Though these releases can be
-echo   potentially buggy and unstable.
+echo   #integration-beta. These releases usually have more
+echo   features but can be potentially buggy and unstable.
 echo.
 echo            https://discord.gg/fcufAUXcnm
 echo.
@@ -470,8 +470,8 @@ echo   the mod file onto this program and press enter.
 echo.
 echo     There is also a beta branch channel which you 
 echo   may also be able to download from named
-echo   #integration-beta. Though these releases can be
-echo   potentially buggy and unstable.
+echo   #integration-beta. These releases usually have more
+echo   features but can be potentially buggy and unstable.
 echo.
 echo            https://discord.gg/fcufAUXcnm
 echo.
@@ -708,7 +708,7 @@ timeout 5 /nobreak 1>NUL
 goto main
 
 :strip
-if "!%~1!"=="" goto end
+if "!%~1!"=="" goto :eof
 set temp1=!%~1!
 set temp1=!temp1:"=!
 set temp1=!temp1:%%=!
@@ -719,5 +719,6 @@ set temp1=!temp1:^|=!
 set temp1=%temp1:!=%
 set %~1=%temp1%
 set temp1=&set temp2=
-:end
+goto :eof
 
+:end
