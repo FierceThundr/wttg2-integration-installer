@@ -1,6 +1,6 @@
 # wttg2-integration-installer
 
-[Warning] This script is currently outdated and lacks steps necessary for proper installation
+[Warning] This script is currently not being updated, but will still work as of version 1.3 of WTTG2+
 
 The program in this repository is an installation script for a mod for Welcome to the Game 2 created by nasko222n. 
 
